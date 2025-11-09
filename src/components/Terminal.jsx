@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -833,6 +834,29 @@ const Terminal = () => {
                             lineStr.includes('WARNING') || lineStr.includes('⚠️') ? 'text-yellow-400' :
                             lineStr.includes('HIGH') ? 'text-orange-400' :
                             lineStr.includes('MEDIUM') ? 'text-yellow-300' :
+                            lineStr.includes('LOW') ? 'text-green-300' :
+                            lineStr.includes('INFO') || lineStr.includes('ℹ️') ? 'text-blue-400' :
+                            lineStr.includes('✅') || lineStr.includes('SECURE') ? 'text-green-400' :
+                            'text-green-100'
+                          }`}>
+                            {lineStr}
+                          </div>
+                        );
+                      })
+                    ) : (
+                      <div className={`${
+                        String(item.response || '').includes('CRITICAL') || String(item.response || '').includes('🚨') ? 'text-red-400' :
+                        String(item.response || '').includes('WARNING') || String(item.response || '').includes('⚠️') ? 'text-yellow-400' :
+                        String(item.response || '').includes('HIGH') ? 'text-orange-400' :
+                        String(item.response || '').includes('MEDIUM') ? 'text-yellow-300' :
+                        String(item.response || '').includes('LOW') ? 'text-green-300' :
+                        String(item.response || '').includes('INFO') || String(item.response || '').includes('ℹ️') ? 'text-blue-400' :
+                        String(item.response || '').includes('✅') || String(item.response || '').includes('SECURE') ? 'text-green-400' :
+                        'text-green-100'
+                      }`}>
+                        {item.response}
+                      </div>
+                    )}
                   </div>
                   <button
                     onClick={() => navigator.clipboard.writeText(
