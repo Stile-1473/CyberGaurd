@@ -7,13 +7,24 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#00ff00',
-        secondary: '#00cc00',
-        background: '#000000',
-        text: '#00ff00',
+        primary: '#00d4aa',
+        secondary: '#ff6b6b',
+        accent: '#4ecdc4',
+        background: '#0a0a0a',
+        text: '#ffffff',
+        'glass-bg': 'rgba(255, 255, 255, 0.1)',
+        'glass-border': 'rgba(255, 255, 255, 0.2)',
       },
       fontFamily: {
         mono: ['JetBrains Mono', 'monospace'],
+        sans: ['Inter', 'sans-serif'],
+      },
+      backdropBlur: {
+        xs: '2px',
+      },
+      boxShadow: {
+        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+        'glass-hover': '0 8px 32px 0 rgba(31, 38, 135, 0.5)',
       },
     },
   },

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaArrowDown } from 'react-icons/fa';
 
-const HeroSection = () => {
+const HeroSection = ({ onGetStarted }) => {
   const scrollToAbout = () => {
     document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
   };
@@ -14,7 +14,10 @@ const HeroSection = () => {
           Elevate Your Advertising Game with Cutting-Edge Strategies and Data-Driven Insights
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-8 sm:space-y-0 sm:space-x-12 animate-fade-in-up animation-delay-400">
-          <button className="glass-button bg-secondary text-white px-12 py-6 rounded-2xl font-semibold text-2xl hover:bg-yellow-400 transition duration-300">
+          <button
+            onClick={onGetStarted}
+            className="glass-button bg-secondary text-white px-12 py-6 rounded-2xl font-semibold text-2xl hover:bg-yellow-400 transition duration-300"
+          >
             Get Started Today
           </button>
           <button
